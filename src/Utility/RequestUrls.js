@@ -12,4 +12,3 @@ const requests = {
   fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
 };
 export default requests;
-// https://api.themoviedb.org/3/discover/tv?api_key=bd5d2375551ce84ac11c884fe94c9692&with_networks=213;
