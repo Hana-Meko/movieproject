@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
-import styles from "./footer.module.css";
+import styles from "./Footer.module.css";
 
 function Footer() {
   const socialLinks = [
