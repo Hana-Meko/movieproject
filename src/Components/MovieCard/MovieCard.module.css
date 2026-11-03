@@ -1,0 +1,160 @@
+.cardWrapper {
+  position: relative;
+  width: 290px;
+  height: 198px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: visible;
+  z-index: 1;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+.hoverCard {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  width: 320px;
+  min-height: 305px;
+  height: auto;
+  background: #111;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
+
+  /* hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+
+  /* Optimize the performance */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  pointer-events: none;
+  z-index: 999999;
+}
+
+.cardWrapper:hover .hoverCard {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+.hoverImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px 8px 0 0;
+}
+
+.hoverCard:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+.badge {
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 10px 0 0 12px;
+  font-weight: 500;
+}
+
+.buttonRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px 0;
+}
+
+.circleButton {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.circleButtonSmall {
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.metaRow {
+  display: flex;
+  gap: 10px;
+  padding: 10px 14px 0;
+  padding-bottom: 30px;
+  font-size: 14px;
+}
+
+.tag {
+  font-size: 14px;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 13px;
+  color: #bcbcbc;
+  padding: 8px 14px 0;
+}
+
+.dot {
+  margin: 0 6px;
+}
+
+@media (max-width: 1024px) {
+  .cardWrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 290 / 198;
+  }
+  .hoverCard {
+    width: 115%;
+    min-height: auto;
+  }
+  .hoverImage {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .circleButton,
+  .circleButtonSmall {
+    width: 30px;
+    height: 30px;
+  }
+  .metaRow {
+    padding-bottom: 10px;
+    font-size: 12px;
+  }
+  .tag {
+    font-size: 12px;
+  }
+  .genres {
+    font-size: 11px;
+    padding-bottom: 12px;
+  }
+}
+
+@media (hover: none), (max-width: 768px) {
+  .hoverCard {
+    display: none;
+  }
+}
